@@ -38,7 +38,7 @@ public class WarehouseController {
             @ApiImplicitParam(name = "size", dataType = "integer", paramType = "query",
                     value = "Number of records per page."),
     })
-    public Warehouse getAllWarehouse(
+    public List<Warehouse> getAllWarehouse(
             Pageable pageable,
             @ApiParam(value = "sortBy - eg. created, id, fileName")
             @RequestParam(value = "sort_by", required = false, defaultValue = "created") String sortBy,
@@ -56,7 +56,7 @@ public class WarehouseController {
 
         printAll(warehouses);
        // return warehouseService.buildPageable(warehouses, pageable);
-        return warehouses.get(0);
+        return warehouses;
 
     }
 

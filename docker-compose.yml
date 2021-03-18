@@ -2,7 +2,7 @@ version: '3'
 services:
   mongo:
     image: mongo:3.6.18-xenial
-    container_name: mongo
+    container_name: mongo5
     restart: always
     ports:
       - 27017:27017
@@ -12,7 +12,7 @@ services:
     healthcheck:
       test: "exit 0"
 
-  hotel:
+  warehouse:
     build: warehouse/
     image: warehouse
     container_name: warehouse
